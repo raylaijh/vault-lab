@@ -11,7 +11,7 @@ resource "google_compute_instance" "default" {
   name         = "vault"
   machine_type = "f1-micro"
   zone         = "asia-southeast1-a"
-  count        = "var.instance_count"
+  count        = "${var.instance_count}"
 
 metadata = {
 #   ssh-keys = "raymond:${file("~/.ssh/id_rsa.pub")}"
