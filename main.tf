@@ -8,7 +8,7 @@ provider "google" {
 
 #
 resource "google_compute_instance" "default" {
-  name         = "vault"
+  name         = "vault-vm-$(count.index)"
   machine_type = "f1-micro"
   zone         = "asia-southeast1-a"
   count        = "${var.instance_count}"
