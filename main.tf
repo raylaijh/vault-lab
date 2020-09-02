@@ -15,7 +15,7 @@ resource "google_compute_instance" "default" {
 
 metadata = {
 #   ssh-keys = "raymond:${file("~/.ssh/id_rsa.pub")}"
-   ssh-keys = var.ssh
+   ssh-keys = "raymond:${var.ssh}"
 }
   boot_disk {
     initialize_params {
