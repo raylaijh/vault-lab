@@ -1,6 +1,6 @@
 provider "google" {
-#  credentials = file("../optical-pillar-279806-8a8df30de4a6.json")
-  credentials = var.secret
+  credentials = file("~/Downloads/vault-setup-raymond-3eaf6a87d634.json")
+#  credentials = var.secret
   project = "raymond-vault-test"
   region  = "asia-southeast1"
   zone    = "asia-southeast1-a"
