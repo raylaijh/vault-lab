@@ -11,7 +11,7 @@ resource "google_compute_instance" "default" {
   name         = "vault"
   machine_type = "f1-micro"
   zone         = "asia-southeast1-a"
-  count        = "${var.instance_count}"
+  count        = "var.instance_count"
 
 metadata = {
 #   ssh-keys = "raymond:${file("~/.ssh/id_rsa.pub")}"
@@ -38,7 +38,7 @@ variable "secret" {
    
           }
 
-variable "instaance_count" {
+variable "instance_count" {
   default = "3"
 }
 
@@ -67,7 +67,7 @@ resource "google_compute_firewall" "default" {
 terraform {
   backend "remote" {
     hostname = "app.terraform.io"
-    organization = "vault-raymond"
+    organization = "hashicorp-raymond-test"
 
     workspaces {
       name = "gcp-vault"
@@ -75,6 +75,6 @@ terraform {
   }
 }
 
-output "ip" {
- value = google_compute_instance.default.network_interface.0.access_config.0.nat_ip
-}
+#output "ip" {
+# value = google_compute_instance.default[count.index].default.network_interface.0.access_config.0.nat_ip
+#}
