@@ -1,7 +1,7 @@
 provider "google" {
 #  credentials = file("/Users/raymond/Downloads/vault-setup-raymond-2097d87a40e1.json")
   credentials = var.secret
-  project = "vault-setup-raymond"
+  project = var.project
   region  = "asia-southeast1"
   zone    = "asia-southeast1-a"
 }
