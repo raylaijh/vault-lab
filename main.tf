@@ -42,6 +42,11 @@ variable "ssh" {
 
 }
 
+variable "project" {
+  default = []
+
+}
+
 variable "instance_count" {
   default = "3"
 }
