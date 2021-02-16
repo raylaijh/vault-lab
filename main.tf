@@ -75,7 +75,7 @@ resource "google_compute_firewall" "default" {
 
 terraform {
   backend "remote" {
-    hostname = "http://ec2-13-212-255-194.ap-southeast-1.compute.amazonaws.com"
+    hostname = "ec2-13-212-255-194.ap-southeast-1.compute.amazonaws.com"
     organization = "hashicorp"
 
     workspaces {
