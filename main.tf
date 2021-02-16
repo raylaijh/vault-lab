@@ -75,11 +75,11 @@ resource "google_compute_firewall" "default" {
 
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "hashicorp-raymond-test"
+    hostname = "ec2-13-212-255-194.ap-southeast-1.compute.amazonaws.com"
+    organization = "hashicorp"
 
     workspaces {
-      name = "gcp-vault"
+      name = "vault-lab"
     }
   }
 }
