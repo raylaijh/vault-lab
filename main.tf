@@ -1,16 +1,16 @@
 provider "google" {
-#  credentials = file("/Users/raymond/Downloads/vault-setup-raymond-2097d87a40e1.json")
+
   credentials = var.secret
   project = var.project
   region  = "asia-southeast1"
-  zone    = "asia-southeast1-a"
+  zone    = "${var.zone}"
 }
 
 #
 resource "google_compute_instance" "default" {
   name         = "vault-vm-${count.index}"
-  machine_type = "f1-micro"
-  zone         = "asia-southeast1-a"
+  machine_type = "${var.machine_type}"
+  zone         = "${var.zone}"
   count        = "${var.instance_count}"
 
 metadata = {
@@ -32,6 +32,17 @@ metadata = {
     }
   }
 }
+
+variable "machine_type" {
+default = []
+  
+  }
+
+variable "zone" {
+default = "asia-southeast1-a"
+  
+  }
+
 
 variable "secret" {
   default = []
