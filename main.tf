@@ -1,6 +1,6 @@
 provider "google" {
 
-  credentials = var.secret
+ # credentials = var.secret
   project = var.project
   region  = "asia-southeast1"
   zone    = "${var.zone}"
@@ -44,8 +44,8 @@ default = "asia-southeast1-a"
   }
 
 
-variable "secret" {
-  default = []
+#variable "secret" {
+#  default = []
    
           }
 variable "ssh" {
