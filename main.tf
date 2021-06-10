@@ -47,7 +47,7 @@ default = "asia-southeast1-a"
 #variable "secret" {
 #  default = []
    
-          }
+#          }
 variable "ssh" {
   default = []
 
